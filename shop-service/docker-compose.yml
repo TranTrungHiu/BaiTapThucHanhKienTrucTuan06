@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  product-db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_DATABASE: productdb
+      MARIADB_USER: root
+      MARIADB_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"
