@@ -9,7 +9,7 @@ Dự án này là một hệ thống microservices được xây dựng bằng S
 
 ## Kiến trúc hệ thống
 
-![Kiến trúc Microservices](images/microservices.png)
+![Kiến trúc Microservices](image/microservices.png)
 
 Hệ thống bao gồm các thành phần chính sau:
 
