@@ -1,0 +1,39 @@
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:mariadb://localhost:3306/lab-products?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    discovery:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+
+app:
+  rabbit:
+    queue-name: order-create-queue

@@ -1,0 +1,38 @@
+server:
+  port: 8083
+
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mariadb://localhost:3306/lab-orders?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+app:
+  rabbit:
+    queue-name: order-create-queue
+    exchange-name: order-exchange
+    routing-key: order-routing-key
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /index.html

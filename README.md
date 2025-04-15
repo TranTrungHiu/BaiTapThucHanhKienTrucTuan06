@@ -1,12 +1,15 @@
 # Hệ thống Microservices Thương mại điện tử
 
-## Giới thiệu
+## Giới thiệu chung
 
-Dự án này là một hệ thống microservices được xây dựng bằng Spring Boot và Spring Cloud, tập trung vào việc xây dựng một nền tảng thương mại điện tử với các dịch vụ riêng biệt cho từng chức năng như quản lý khách hàng, sản phẩm, đơn hàng, xác thực người dùng, và gateway API.
+Dự án này là một hệ thống microservices được xây dựng bằng Spring Boot và Spring Cloud, tập trung vào việc xây dựng một nền tảng thương mại điện tử với các dịch vụ riêng biệt cho từng chức năng như quản lý khách hàng, sản phẩm, đơn hàng, xác thực người dùng, và gateway API. Dự án được phát triển qua 2 giai đoạn:
+
+- **Tuần 6**: Triển khai các microservices cơ bản chạy trên máy local
+- **Tuần 7**: Containerization toàn bộ hệ thống với Docker, nâng cao khả năng mở rộng và triển khai
 
 ## Kiến trúc hệ thống
 
-![Kiến trúc Microservices](architecture_diagram.png)
+![Kiến trúc Microservices](images/microservices.png)
 
 Hệ thống bao gồm các thành phần chính sau:
 
@@ -41,21 +44,31 @@ Xử lý đơn hàng, bao gồm tạo đơn hàng mới, cập nhật trạng th
 
 ### 7. RabbitMQ Service
 
-Message broker được triển khai qua Docker Compose, giúp các microservice giao tiếp với nhau thông qua hàng đợi tin nhắn, đảm bảo tính nhất quán và độ tin cậy trong giao tiếp giữa các service.
+Message broker giúp các microservice giao tiếp với nhau thông qua hàng đợi tin nhắn, đảm bảo tính nhất quán và độ tin cậy trong giao tiếp giữa các service.
+
+### 8. MariaDB (Tuần 7)
+
+Cơ sở dữ liệu quan hệ được sử dụng để lưu trữ dữ liệu cho các service.
 
 ## Công nghệ sử dụng
 
-- **Spring Boot 3.4.4**: Framework Java để phát triển các ứng dụng standalone, production-ready
+- **Spring Boot 3.4.4**: Framework Java để phát triển các ứng dụng standalone
 - **Spring Cloud 2024.0.1**: Tập hợp các công cụ phát triển microservices
 - **Java 17**: Ngôn ngữ lập trình chính của dự án
-- **Spring Cloud Gateway**: Cổng API để điều hướng các request đến các service tương ứng
+- **Spring Cloud Gateway**: Cổng API để điều hướng các request
 - **Spring Cloud Netflix Eureka**: Service discovery để quản lý các microservice
 - **Spring Security**: Bảo mật cho ứng dụng
 - **JWT (JSON Web Token)**: Xác thực và phân quyền người dùng
 - **Maven**: Công cụ quản lý phụ thuộc và build project
 - **RabbitMQ**: Message broker để giao tiếp giữa các service
+- **Docker & Docker Compose**: Containerization và quản lý containers (Tuần 7)
+- **MariaDB**: Hệ quản trị cơ sở dữ liệu quan hệ (Tuần 7)
 
-## Cài đặt và Khởi động
+## Chi tiết triển khai
+
+# Tuần 6: Microservices cơ bản
+
+## Cài đặt và Khởi động (Tuần 6)
 
 ### Yêu cầu hệ thống
 
@@ -110,6 +123,98 @@ cd week06/order-service
 cd week06/api-gateway
 ./mvnw spring-boot:run
 ```
+
+## Cấu trúc dự án (Tuần 6)
+
+```
+week06/
+├── api-gateway/           # API Gateway Service
+├── customer-service/      # Customer Management Service
+├── eureka-server/         # Service Discovery
+├── identity-service/      # Authentication & Authorization Service
+├── order-service/         # Order Management Service
+├── product-service/       # Product Management Service
+└── rabbitmq-service/      # Message Broker Configuration
+```
+
+# Tuần 7: Containerization với Docker
+
+## Cài đặt và Khởi động (Tuần 7)
+
+### Yêu cầu hệ thống
+
+- Docker Engine
+- Docker Compose
+
+### Bước 1: Clone dự án
+
+```bash
+git clone <repository-url>
+cd BaiTapThucHanhKienTrucTuan05
+```
+
+### Bước 2: Khởi động toàn bộ hệ thống với Docker Compose
+
+```bash
+cd week07
+docker-compose up -d
+```
+
+Lệnh này sẽ:
+
+1. Build các Docker images cho tất cả các services
+2. Tạo và khởi động các containers
+3. Thiết lập mạng Docker để các services có thể giao tiếp với nhau
+4. Khởi động MariaDB và RabbitMQ
+
+### Bước 3: Kiểm tra trạng thái các services
+
+```bash
+docker-compose ps
+```
+
+### Bước 4: Xem logs của các services (nếu cần)
+
+```bash
+# Xem log của một service cụ thể
+docker-compose logs api-gateway
+
+# Xem logs theo dõi thời gian thực
+docker-compose logs -f
+```
+
+### Dừng và xóa các containers
+
+```bash
+docker-compose down
+```
+
+## Cấu trúc dự án (Tuần 7)
+
+```
+week07/
+├── api-gateway/           # API Gateway Service với Dockerfile
+├── customer-service/      # Customer Management Service với Dockerfile
+├── docker-compose.yml     # Cấu hình Docker Compose cho toàn bộ hệ thống
+├── eureka-server/         # Service Discovery với Dockerfile
+├── order-service/         # Order Management Service với Dockerfile
+├── product-service/       # Product Management Service với Dockerfile
+└── rabbitmq-server/       # Cấu hình RabbitMQ
+```
+
+## Cấu hình Docker
+
+Mỗi service đều có một Dockerfile riêng để tạo Docker image. Docker Compose được sử dụng để điều phối các containers và cấu hình mạng. Hệ thống sử dụng một mạng Docker bridge để các services có thể giao tiếp với nhau.
+
+Các ports được expose:
+
+- MariaDB: 3306
+- RabbitMQ: 5672 (AMQP), 15672 (Management UI)
+- Eureka Server: 8761
+- API Gateway: 8080
+- Product Service: 8082
+- Order Service: 8083
+- Customer Service: 8084
 
 ## Hướng dẫn sử dụng API
 
@@ -226,30 +331,25 @@ GET /orders/history
 Authorization: Bearer {jwt_token}
 ```
 
-## Demo Screenshots
+## So sánh giữa tuần 6 và tuần 7
 
-![Dashboard](screenshot_dashboard.png)
-![Product List](screenshot_products.png)
-![Order Management](screenshot_orders.png)
-
-## Cấu trúc dự án
-
-```
-week06/
-├── api-gateway/           # API Gateway Service
-├── customer-service/      # Customer Management Service
-├── eureka-server/         # Service Discovery
-├── identity-service/      # Authentication & Authorization Service
-├── order-service/         # Order Management Service
-├── product-service/       # Product Management Service
-└── rabbitmq-service/      # Message Broker Configuration
-```
+| Đặc điểm               | Tuần 6                   | Tuần 7                             |
+| ---------------------- | ------------------------ | ---------------------------------- |
+| **Mô hình triển khai** | Chạy trực tiếp trên host | Containerized với Docker           |
+| **Quản lý service**    | Manual start/stop        | Docker Compose orchestration       |
+| **Cơ sở dữ liệu**      | Embedded/File-based      | MariaDB container                  |
+| **Quy mô hệ thống**    | Triển khai local         | Sẵn sàng cho môi trường production |
+| **Network**            | Localhost                | Docker network bridge              |
+| **Khả năng mở rộng**   | Hạn chế                  | Dễ dàng scale với Docker           |
+| **Môi trường**         | Dev                      | Dev/QA/Production                  |
 
 ## Thông tin bổ sung
 
 - **Eureka Dashboard**: http://localhost:8761
 - **API Gateway**: http://localhost:8080
-- **RabbitMQ Management**: http://localhost:15672 (username: guest, password: guest)
+- **RabbitMQ Management** (Tuần 6): http://localhost:15672 (username: guest, password: guest)
+- **RabbitMQ Management** (Tuần 7): http://localhost:15672 (username: user, password: password)
+- **MariaDB** (Tuần 7): localhost:3306 (username: root, password: root)
 
 ## Những phát triển tiếp theo
 
@@ -258,3 +358,5 @@ week06/
 3. Triển khai Resilience4j để xử lý Circuit Breaker
 4. Thêm ELK Stack để quản lý logging tập trung
 5. Triển khai Prometheus và Grafana để giám sát hệ thống
+6. Kubernetes orchestration để quản lý container trong môi trường production
+7. CI/CD pipeline để tự động hóa việc build, test và deploy
