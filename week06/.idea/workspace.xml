@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a69d848a-c196-4f1d-a377-1205f0d45f42" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/apiGateway/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/apiGateway/filters/JWTGlobalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/customer/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/customer/entities/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/customer/repositories/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/customer/services/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/customer/services/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/controllers/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/dtos/SignInRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/dtos/SignInResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/dtos/SignUpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/filters/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/services/impl/AuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/services/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/iuh/fit/se/identity/utils/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/order/controllers/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/order/entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/order/repositories/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/order/services/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/order/services/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/configs/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/controllers/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/filters/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/product/services/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq-service/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2vZ5UsYr6siLdwLsXfXHF4i7at8" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IdentityApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.iuh.fit [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/21136181_MicroService_WS/Lab06-Microservice/product-service&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\21136181_MicroService_WS\Lab06-Microservice\rabbitmq-service" />
+      <recent name="D:\21136181_MicroService_WS\Lab06-Microservice\identity-service\src\main\java\iuh\fit\se\identity" />
+      <recent name="D:\21136181_MicroService_WS\Lab06-Microservice\order-service\src\main\java\order" />
+      <recent name="D:\21136181_MicroService_WS\Lab06-Microservice\product-service\src\main\java\product" />
+      <recent name="D:\21136181_MicroService_WS\Lab06-Microservice\customer-service\src\main\java\customer" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="apiGateway.configs" />
+      <recent name="iuh.fit.se.identity.services.impl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+        <option value="CompoundRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.OrderServiceApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apiGateway.ApiGatewayApplication" />
+      <module name="iuh.fit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apiGateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="customer.CustomerServiceApplication" />
+      <module name="iuh.fit (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IdentityApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="iuh.fit.se.identity.IdentityApplication" />
+      <module name="identity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="iuh.fit.se.identity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="order.OrderServiceApplication" />
+      <module name="iuh.fit (3)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="product.ProductServiceApplication" />
+      <module name="iuh.fit (4)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.OrderServiceApplication" />
+      <item itemvalue="Application.ApiGatewayApplication" />
+      <item itemvalue="Application.ProductServiceApplication" />
+      <item itemvalue="Application.CustomerServiceApplication" />
+      <item itemvalue="Application.IdentityApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.OrderServiceApplication" />
+        <item itemvalue="Application.CustomerServiceApplication" />
+        <item itemvalue="Application.ProductServiceApplication" />
+        <item itemvalue="Application.IdentityApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a69d848a-c196-4f1d-a377-1205f0d45f42" name="Changes" comment="" />
+      <created>1744339774941</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744339774941</updated>
+    </task>
+    <servers />
+  </component>
+</project>
